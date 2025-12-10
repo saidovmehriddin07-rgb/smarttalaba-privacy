@@ -1,36 +1,130 @@
-# This is a basic workflow to help you get started with Actions
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Smart Talaba — Maxfiylik siyosati</title>
+  <meta name="description" content="Smart Talaba Telegram botining maxfiylik siyosati. Qaysi ma'lumotlar yig'iladi, qanday foydalaniladi va qanday o'chiriladi.">
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --accent:#0b74de; --muted:#6b7280; --maxw:900px;
+      --radius:12px; --gap:18px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,ui-sans-serif,system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,var(--bg),#ffffff); color:#0f1724}
+    .wrap{max-width:var(--maxw); margin:36px auto; padding:20px}
+    .card{background:var(--card); border-radius:var(--radius); box-shadow:0 6px 24px rgba(15,23,36,0.06); padding:26px}
+    header{display:flex; gap:16px; align-items:center; flex-wrap: wrap;}
+    .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#3fb0ff); display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:22px}
+    h1{margin:0;font-size:20px}
+    p.lead{color:var(--muted); margin:8px 0 18px}
+    nav.tools{margin-top:12px; display:flex; gap:10px; flex-wrap:wrap}
+    .linkbtn{background:transparent;border:1px solid #e6eefb;color:var(--accent); padding:8px 12px;border-radius:8px; cursor:pointer; text-decoration: none;}
+    button.primary{background:var(--accent); color:#fff; border:0; padding:10px 14px; border-radius:10px; cursor:pointer}
+    section{margin-top:20px}
+    h2{font-size:16px;margin:0 0 10px}
+    .muted{color:var(--muted)}
+    ul{margin:8px 0 0 18px}
+    footer{margin-top:26px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap}
+    .meta{color:var(--muted); font-size:13px}
+    /* responsive */
+    @media (max-width:600px){
+      .wrap{margin:16px; padding:16px;}
+      header{flex-direction: column; align-items: flex-start; gap:8px;}
+      .logo{width:56px;height:56px; margin-bottom: 8px;}
+      h1{font-size:18px;}
+      p.lead{font-size:14px; margin: 4px 0 12px;}
+      nav.tools{flex-direction: column; gap:8px;}
+      .linkbtn, button.primary{width:100%;}
+    }
+    /* print styles */
+    @media print{body{background:white} .card{box-shadow:none} nav.tools, footer{display:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="main">
+      <header>
+        <div class="logo" aria-hidden>ST</div>
+        <div>
+          <h1>Smart Talaba — Maxfiylik siyosati</h1>
+          <p class="lead">Ushbu hujjat Smart Talaba Telegram botidan foydalanishda foydalanuvchilarning shaxsiy ma’lumotlari qanday yig‘ilishi, saqlanishi va ishlatilishini tushuntiradi.</p>
+          <div class="meta">Oxirgi yangilanish: <strong>2025-yil Dekabr</strong></div>
+        </div>
+      </header>
 
-name: CI
+      <nav class="tools" aria-label="Hujjat amallari">
+        <button class="primary" id="printBtn" onclick="window.print()">Print</button>
+        <button class="linkbtn" id="downloadBtn">Download .txt</button>
+        <a class="linkbtn" style="text-align: center;" href="#contact">Aloqa</a>
+      </nav>
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+      <section aria-labelledby="sec1">
+        <h2 id="sec1">1. Yig‘iladigan ma’lumotlar</h2>
+        <p class="muted">Smart Talaba botidan foydalanish jarayonida quyidagi ma’lumotlar yig‘ilishi mumkin:</p>
+        <ul>
+          <li>Telegram foydalanuvchi identifikatori (user_id)</li>
+          <li>Hemis tizimiga kirish uchun zarur bo‘lgan autentifikatsiya ma’lumotlari (login va parol — shifrlangan yoki hash qilingan holda)</li>
+          <li>Bot sozlamalari (eslatma vaqti va shunga o‘xshash texnik parametrlar)</li>
+        </ul>
+      </section>
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+      <section aria-labelledby="sec2">
+        <h2 id="sec2">2. Ma’lumotlardan foydalanish</h2>
+        <p class="muted">Yig‘ilgan ma’lumotlar faqat quyidagi maqsadlarda ishlatiladi:</p>
+        <ul>
+          <li>Hemis axborot tizimi bilan integratsiya qilish</li>
+          <li>Dars jadvali, davomat, baholar, topshiriqlar ro‘yxati va profil ma’lumotlarini taqdim etish</li>
+          <li>Darslar va topshiriqlar bo‘yicha bildirishnomalar yuborish</li>
+        </ul>
+        <p class="muted">Smart Talaba botidan foydalanuvchi roziligisiz va ushbu maxfiylik siyosatida ko‘rsatilmagan maqsadlarda ma’lumotlardan foydalanilmaydi.</p>
+      </section>
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+      <section aria-labelledby="sec3">
+        <h2 id="sec3">3. Saqlash va himoya</h2>
+        <p class="muted">Barcha shaxsiy va maxfiy ma’lumotlar texnik xavfsizlik choralariga rioya qilingan holda shifrlangan holatda saqlanadi. Yig‘ilgan ma’lumotlar uchinchi shaxslarga berilmaydi, bundan foydalanuvchining bevosita so‘rovi asosida Hemis tizimi bilan ishlash holatlari mustasno.</p>
+      </section>
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      <section aria-labelledby="sec4">
+        <h2 id="sec4">4. Ma’lumotlarni o‘chirish</h2>
+        <p class="muted">Foydalanuvchi istalgan vaqtda Smart Talaba botidan foydalanishni to‘xtatish va o‘z shaxsiy ma’lumotlarini o‘chirish huquqiga ega.</p>
+        <p class="muted">Buning uchun quyidagi aloqa manziliga murojaat qilish kifoya.</p>
+      </section>
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      <section id="contact" aria-labelledby="sec5">
+        <h2 id="sec5">5. Aloqa</h2>
+        <p class="muted">Maxfiylik siyosati yoki shaxsiy ma’lumotlarga oid savollar bo‘yicha murojaat qilish uchun:</p>
+        <ul>
+          <li>Telegram: <strong>@raxim_jonovich</strong></li>
+        </ul>
+      </section>
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      <section aria-labelledby="sec6">
+        <h2 id="sec6">6. Yakuniy jumla</h2>
+        <p class="muted">Smart Talaba botidan foydalanish orqali foydalanuvchi ushbu maxfiylik siyosati shartlariga rozilik bildiradi. Ma’lumotlaringiz shifrlangan va maxfiy tarzda saqlanadi.</p>
+      </section>
+
+      <footer>
+        <div class="meta">&copy; Smart Talaba • Oxirgi yangilanish: 2025-yil Dekabr</div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Download .txt implementation
+    (function(){
+      const text = `Smart Talaba Telegram botining maxfiylik siyosati\n\nUshbu hujjat Smart Talaba Telegram botidan foydalanishda foydalanuvchilarning shaxsiy ma’lumotlari qanday yig‘ilishi, saqlanishi va ishlatilishini tushuntiradi.\n\n1. Yig‘iladigan ma’lumotlar\n- Telegram foydalanuvchi identifikatori (user_id)\n- Hemis tizimiga kirish uchun zarur bo‘lgan autentifikatsiya ma’lumotlari (login va parol — shifrlangan yoki hash qilingan holda)\n- Bot sozlamalari (eslatma va shunga o‘xshash texnik parametrlar)\n\n2. Ma’lumotlardan foydalanish\n- Hemis axborot tizimi bilan integratsiya qilish\n- Dars jadvali, davomat, baholar, topshiriqlar ro‘yxati va profil ma’lumotlarini taqdim etish\n- Darslar va topshiriqlar bo‘yicha bildirishnomalar yuborish\n\nSmart Talaba botidan foydalanuvchi roziligisiz va ushbu maxfiylik siyosatida ko‘rsatilmagan maqsadlarda ma’lumotlardan foydalanilmaydi.\n\n3. Saqlash va himoya\nBarcha shaxsiy va maxfiy ma’lumotlar texnik xavfsizlik choralariga rioya qilingan holda shifrlangan holatda saqlanadi. Yig‘ilgan ma’lumotlar uchinchi shaxslarga berilmaydi, bundan foydalanuvchining bevosita so‘rovi asosida Hemis tizimi bilan ishlash holatlari mustasno.\n\n4. Ma’lumotlarni o‘chirish\nFoydalanuvchi istalgan vaqtda Smart Talaba botidan foydalanishni to‘xtatish va o‘z shaxsiy ma’lumotlarini o‘chirish huquqiga ega. Buning uchun botdagi maxsus buyruqdan foydalanish yoki quyidagi aloqa manziliga murojaat qilish kifoya.\n\n5. Aloqa\nTelegram: @raxim_jonovich\n\nSmart Talaba botidan foydalanish orqali foydalanuvchi ushbu maxfiylik siyosati shartlariga rozilik bildiradi. Ma’lumotlaringiz shifrlangan va maxfiy tarzda saqlanadi.\n\nOxirgi yangilanish: 2025-yil mart`;
+
+      const btn = document.getElementById('downloadBtn');
+      btn.addEventListener('click', function(){
+        const blob = new Blob([text], {type: 'text/plain;charset=utf-8'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'smart-talaba-privacy.txt';
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(()=> URL.revokeObjectURL(url), 1000);
+      });
+    })();
+  </script>
+</body>
+</html>
